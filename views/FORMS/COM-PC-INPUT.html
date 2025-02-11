@@ -1,0 +1,320 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keyword" content="">
+    <meta name="description" content="button">
+    <meta name="author" content="joahreum">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title> INPUT </title>
+
+    <!-- 가이드CSS -->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+
+    <!-- content.css -->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/content.css">
+
+    <!-- 공통JS -->
+    <script type="text/javascript" src="../../assets/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/default.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/guide.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/ui_plugin.js"></script>
+
+    <style>
+        .wrap:has(.guide) {
+            padding: 20px;
+        }
+
+        .guide {
+            padding: 15px;
+        }
+
+        .guide h4 {
+            margin: 20px 0;
+        }
+
+        .guide .border {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #33333323;
+            border-radius: 15px;
+        }
+
+        .guide .border li {
+            padding: 10px;
+        }
+
+        /* 타이포 */
+        .text-wrap+.text-wrap {
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="guide">
+            <h3 style="background-color:#eee; padding:10px;">인풋 길이 조정 필요시 col-숫자 넣기</h3>
+            <h4>검색창 INPUT</h4>
+            <div class='form-wrap search border'>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="select-box">
+                            <div class="se-select ei-w160" data-stove="select">
+                                <select class="" title="메뉴구분">
+                                    <option value="" disabled="" selected="" hidden="">선택하세요</option>
+                                    <!-- [D] : default - 셀렉트의 placeholder 기능-->
+                                    <option value="0">option 00</option>
+                                    <option value="1">option 01</option>
+                                    <option value="2">option 02</option>
+                                    <option value="3">option 03</option>
+                                    <option value="4">option 04</option>
+                                    <option value="5">option 05</option>
+                                    <option value="6">option 06</option>
+                                </select>
+                                <div class="e-select-dim"></div>
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <input id="" title="" type="text" name="" class="form-control hasCancel" maxlength="11"
+                                placeholder="검색"><!--[D] hasCancel 클래스 : 삭제 버튼 생성-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4>인증 번호 입력</h4>
+            <div class="form-wrap border">
+                <div class="form-group correct time">
+                    <label for="" class="">디폴트</label>
+                    <div class="form-row">
+                        <div class="col">
+                            <input id="" title="" type="number" class="form-control" name="" placeholder="숫자 6자리 입력"
+                                oninput="this.value = this.value.slice(0,6)">
+                            <span class="timeNum">3:00</span>
+                        </div>
+                        <button class="btn btn-input active" type="button">시간연장</button>
+                    </div>
+                    <p class="info1">시간연장은 1회만 할 수 있습니다.</p>
+                </div>
+
+                <div class="form-group correct">
+                    <label for="" class="">시간연장 버튼 1회 클릭 시 (active 클래스 변경 필요)</label>
+                    <div class="form-row">
+                        <div class="col time">
+                            <input id="" title="" type="number" class="form-control" name="" placeholder="숫자 6자리 입력"
+                                oninput="this.value = this.value.slice(0,6)" disabled>
+                            <span class="timeNum active">3:00</span><!-- [D] : 1회 - 시간연장 버튼 클릭 시 active클래스 생성 -->
+                        </div>
+                        <button class="btn btn-input" type="button" disabled
+                            id="myButton">시간연장</button><!-- [D] : 1회 - 시간연장 버튼 클릭 시 active 클래스 삭제 -->
+                    </div>
+                    <p class="info1">시간연장은 1회만 할 수 있습니다.</p>
+                </div>
+            </div>
+
+            <h4>공통 INPUT</h4>
+            <div class="form-wrap border">
+                <div class="form-group">
+                    <label for="">성명</label>
+                    <input id="" title="" type="text" name="" class="form-control" placeholder="성명">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Valid</label>
+                    <input id="" title="" type="text" name="" class="form-control" placeholder="Valid" value="Valid">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Disabled</label>
+                    <input id="" title="" type="text" name="" class="form-control" placeholder="Disabled" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Readonly</label>
+                    <input id="" title="" type="text" name="" class="form-control" placeholder="disabled" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="">주민등록번호 뒷자리 하나만 노출될 경우</label>
+                    <div class="form-row"><!--[20241104] input 수정-->
+                        <div class="col">
+                            <input id="" title="주민등록번호 앞자리" type="number" class="form-control" min="0" step="1"
+                                maxlength="6" oninput="this.value = this.value.slice(0, 6)" name="" value=""
+                                placeholder="">
+                        </div>
+                        <div class="input-hyphen">-</div>
+                        <div class="col">
+                            <input id="" title="주민등록번호 뒷자리" type="number" class="form-control jumin" min="0" step="1"
+                                maxlength="1" oninput="this.value = this.value.slice(0, 1)" placeholder="●" name=""
+                                value="">
+                            <span class="jumintext">●●●●●●</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4>floating labels</h4>
+            <div class="form-wrap border">
+                <div class="form-group floating">
+                    <label for="floatingInput">Email address</label>
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                </div>
+                <div class="form-group floating">
+                    <label for="floatingPassword">Password</label>
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                </div>
+            </div>
+
+            <h4>Input 금액/개월/% Text Custom</h4>
+            <div class="form-wrap border">
+                <div class="form-group">
+                    <label for="">금액</label>
+                    <div class="col">
+                        <input id="" type="amount" class="form-control amount-num" placeholder="금액을 입력해주세요"
+                            inputmode="numeric"><!-- [D] inputmode="numeric" : 세자리 수마다 콤마 적용  -->
+                        <span class="amount-txt">원</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="">개월</label>
+                    <div class="col">
+                        <input id="" type="amount" class="form-control amount-num" placeholder="기간을 입력해주세요">
+                        <span class="amount-txt">개월</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="">%</label>
+                    <div class="col">
+                        <input id="" type="amount" class="form-control amount-num" placeholder="예상금리를 입력해주세요">
+                        <span class="amount-txt">%</span>
+                    </div>
+                </div>
+            </div>
+
+            <h4>Input 유효성체크</h4>
+            <div class="form-wrap border">
+                <div class="form-group error"><!-- [D] error 클래스 : 유효성체크 N  -->
+                    <label for="">error</label>
+                    <input id="" title="" type="text" name="" class="form-control" placeholder="error">
+                    <p class="info1">내용을 다시 입력해주세요</p>
+                </div>
+
+                <div class="form-group correct"><!-- [D] correct 클래스 : 유효성체크 Y  -->
+                    <label for="">correct</label>
+                    <input id="" title="" type="text" name="" class="form-control" placeholder="correct">
+                    <p class="info1">인증번호가 전송되었습니다. 인증번호를 입력해주세요.</p>
+                </div>
+            </div>
+
+            <h4>Datepicker</h4>
+            <div class="form-wrap border">
+                <div class="form-group">
+                    <label for="">Datepicker</label>
+                    <div class="form-row">
+                        <div class="col-2">
+                            <input type="text" id="" title="기간" name="from" class="form-control datepicker"
+                                placeholder="YYYY.MM.DD" readonly><!-- [D] : datepicker 클래스 : datepicker Custom-->
+                        </div>
+                        <div class="input-hyphen">~</div>
+                        <div class="col-2">
+                            <input type="text" id="" title="기간" name="to" class="form-control datepicker"
+                                placeholder="YYYY.MM.DD" readonly><!-- [D] : datepicker 클래스 : datepicker Custom-->
+                        </div>
+                        <button class="btn btn-input" name="btnSearch" type="button">조회</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Full Datepicker</label>
+                    <input type="text" id="" title="기간" name="date" class="form-control datepicker"
+                        placeholder="YYYY.MM.DD" readonly><!-- [D] : datepicker 클래스 : datepicker Custom-->
+                </div>
+
+                <div class="form-group">
+                    <label for="">Full Datepicker - 년도만 (팝업)</label>
+                    <input type="text" id="" title="년도선택" name="date" class="form-control yearpicker" placeholder="YYYY"
+                        onclick="openPopup('yearDatePopup')" readonly><!-- [D] : yearpicker 클래스 : 팝업 형태-->
+                </div>
+            </div>
+
+            <h4>Input Button</h4>
+            <div class="form-wrap border">
+                <div class="form-group">
+                    <label for="" class="essential">기본</label><!-- [D] essential 클래스 : 필수 입력폼  -->
+                    <div class="form-row"><!-- [D] 인풋/버튼 클릭 시 팝업 호출 영역  -->
+                        <div class="col">
+                            <input id="" title="" type="text" class="form-control" name="" placeholder="내용을 선택해 주세요">
+                        </div>
+                        <button class="btn btn-input" type="button">버튼명</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="essential">Disabled</label><!-- [D] essential 클래스 : 필수 입력폼  -->
+                    <div class="form-row"><!-- [D] 인풋/버튼 클릭 시 팝업 호출 영역  -->
+                        <div class="col">
+                            <input id="" title="" type="text" class="form-control" name="" placeholder="내용을 선택해 주세요"
+                                disabled="">
+                        </div>
+                        <button class="btn btn-input" type="button" disabled="">버튼명</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="essential">완료</label><!-- [D] essential 클래스 : 필수 입력폼  -->
+                    <div class="form-row"><!-- [D] 인풋/버튼 클릭 시 팝업 호출 영역  -->
+                        <div class="col">
+                            <input id="" title="" type="text" class="form-control" name="" value="내용을 입력 했습니다">
+                        </div>
+                        <button class="btn btn-input active"
+                            type="button">버튼명</button><!-- [D] active 클래스 : 완료 됐을 경우 활성화 -->
+                    </div>
+                </div>
+            </div>
+
+            <h4>File Button</h4>
+            <div class="form-wrap border">
+                <div class="form-group file">
+                    <label for="file" class="essential">첨부파일 여러개일 경우 - attachmentFile -
+                        문서파일(3개/50MB)</label><!-- [D] essential 클래스 : 필수 입력폼  -->
+                    <div class="form-row">
+                        <div class="upload-name" id="" type="file" tabindex="0">첨부파일</div>
+                        <input title="file" type="file" class="form-control plus-file  attachmentFile" name=""
+                            placeholder="내용을 선택해 주세요"><!--[D] attachmentFile 클래스 :: 첨부 파일 선택 시 리스트 뿌려짐 [ 300MB 이하의 JPG, PNG Case ]-->
+                        <button class="btn btn-input" type="button">찾아보기</button>
+                    </div>
+                    <p class="caption1">50MB 이하의 xlsx, pdf, hwp, doc, pptx 파일 3개까지 업로드 가능합니다.</p>
+                    <ul class="add-file"><!-- [D] : 파일 리스트 - 스크립트 적용되어있음 -->
+                    </ul>
+                </div>
+    
+                <div class="form-group file">
+                    <label for="file" class="essential">첨부파일 여러개일 경우 - nwcFile -
+                        이미지파일(5개/300MB)</label><!-- [D] essential 클래스 : 필수 입력폼  -->
+                    <div class="form-row">
+                        <div class="upload-name" id="" type="file" tabindex="0">첨부파일</div>
+                        <input title="file" type="file" class="form-control plus-file nwcFile" name=""
+                            placeholder="내용을 선택해 주세요"><!--[D] attachmentFile 클래스 :: 첨부 파일 선택 시 리스트 뿌려짐 [ 300MB 이하의 JPG, PNG Case ]-->
+                        <button class="btn btn-input" type="button">찾아보기</button>
+                    </div>
+                    <p class="caption1">300MB 이하의 JPG, gif, PNG, pdf 파일 5개까지 업로드 가능합니다.</p>
+                    <ul class="add-file"><!-- [D] : 파일 리스트 - 스크립트 적용되어있음 -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

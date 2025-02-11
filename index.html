@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>퍼블가이드</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keyword" content="">
+<meta name="description" content="button">
+<meta name="author" content="joahreum">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<!-- 가이드CSS -->
+<link rel="stylesheet" type="text/css" href="./assets/css/guide.css"/>
+<link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
+
+<!-- 공통JS -->
+<script type="text/javascript" src="./assets/js/lib/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="./assets/js/lib/jquery-ui-1.12.1.js"></script>
+<script type="text/javascript" src="./assets/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="./assets/js/ui/default.js"></script>
+<script type="text/javascript" src="./assets/js/ui/guide.js"></script>
+<script type="text/javascript" src="./assets/js/ui/ui_common.js"></script>
+<script type="text/javascript" src="./assets/js/ui/ui_plugin.js"></script>
+
+<script>
+	$(document).ready(function() {
+	/* a요소를 클릭 했을 시 */
+		$('a.i_link').click(function(){
+	/* iframe 요소의 src 속성값을 a 요소의 data-url 속성값으로 변경 */ 
+		 
+			$('#iframe').attr('src',$(this).attr('data-url'));
+		})
+	});
+</script>
+<style>
+	.aside-closed .iframe_view { padding-left:100px; right:-102px; -webkit-transform: translateX(-100px); -webkit-transition: transform 0.3s ease-out; }
+	.iframe_view { position:fixed;top:0;right: 0;bottom:0; padding-left:200px;width:100%;height:100%;background:#ddd; -webkit-transform: translateX(0); -webkit-transition:transform 0.3s cubic-bezier(0.4, 0, 1, 1); }
+	.iframe_view > div { overflow:hidden; width:100%; height:100%; background:#fff; }
+	nav > p { padding:10px; font-size:20px; font-weight:800; color:#fff; }
+	.main-nav + .p { margin-top:20px; border-top:1px dashed #FFFFEC; }
+	.main-nav > li.one { cursor:pointer; }
+	.main-nav > li.one > a { font-weight:800; color:#fff; }
+	.main-nav > li.one.on { border-radius:15px; }
+	.main-nav > li.one.on > a { padding-bottom:0;margin-bottom:0; border-bottom:none; color:#333333; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+	<!-- s: aside -->
+	<article class="aside">
+		<div class="header">
+			<button type="button" class="btn-mainnav"><span>Menu</span></button>
+		</div>
+		<nav>
+			<p class="p">⊙ pc</p>
+			<ul class="main-nav">
+				<li>
+					<a href="javascript:void(0);">레이아웃</a>
+					<ul class="sub-nav">
+						<li><a class="i_link" data-url="./views/LAYOUT/COM-PC-LAYOUT.html">레이아웃</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);">컨텐츠</a>
+					<ul class="sub-nav">
+						<li><a class="i_link" data-url="./views/CONTENT/COM-PC-TYPOGRAPHY.html">타이포그래피</a></li>
+						<li><a class="i_link" data-url="./views/CONTENT/COM-PC-TABLE.html">테이블</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);">폼</a>
+					<ul class="sub-nav">
+						<li><a class="i_link" data-url="./views/FORMS/COM-PC-INPUT.html">인풋</a></li>
+						<li><a class="i_link" data-url="./views/FORMS/COM-PC-SELECT.html">셀렉트</a></li>
+						<li><a class="i_link" data-url="./views/FORMS/COM-PC-CHECKRADIO.html">체크박스&라디오</a></li>
+					</ul>
+				</li>
+			</ul>
+			<p class="p">⊙ mobile</p>
+			<ul class="main-nav">
+				<!-- <li><a class="i_link" data-url="./orix_app/views/guide/COM-BSC-C001.html">웹퍼블리싱가이드</a></li> -->
+				<!-- <li>
+					<a href="javascript:void(0);"></a>
+					<ul class="sub-nav">
+						<li><a class="i_link" data-url=""></a></li>
+					</ul>
+				</li> -->
+			</ul>
+		</nav>
+	</article>
+	<!-- e: aside -->
+
+	<section class="iframe_view">
+		<div><iframe id="iframe" width="100%" height="100%" src="./views/guide.html"></iframe></div>
+	</section>
+</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>기본 레이아웃</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keyword" content="">
+    <meta name="description" content="button">
+    <meta name="author" content="joahreum">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <!-- 가이드CSS -->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/guide.css"/>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+
+    <!-- 레이아웃CSS -->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/layout.css">
+
+    <!-- 공통JS -->
+    <script type="text/javascript" src="../../assets/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/default.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/guide.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/ui_plugin.js"></script>
+</head>
+<body>
+    <!-- S: skipnavi -->
+    <div id="skipnavi">
+        <script>
+            $(document).ready(function(){
+                $("#skipnavi").load("../INCLUDE/inc_skipnavi.html");
+            });
+        </script>
+    </div>
+    <!-- E: skipnavi -->
+    <div class="wrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+         <!-- s:contentWrap -->
+        <div id="contentWrap" class="sub-content">
+            <!-- s:subvisual-wrap -->
+            <div class="subvisual-wrap">
+                <div class="breadcrumb-wrap">
+                    <ul>
+                        <li class="home"><a href="javascript:void(0);">홈</a></li>
+                        <li><a href="javascript:void(0);">1depth</a></li>
+                        <li><a href="javascript:void(0);">2depth</a></li>
+                        <li><a href="javascript:void(0);">3depth</a></li>
+                    </ul>
+                </div>
+                <div class="text-wrap">
+                    <h3>페이지 타이틀 </h3>
+                    <p class="sub-tit">페이지 보조 내용이 들어갑니다.</p>
+                </div>
+            </div>
+            <!-- //e:subvisual-wrap -->
+            <!-- s:contents -->
+            <div class="contents">
+                content
+            </div>
+            <!-- //e:contents -->
+            <!--s: scrollTop-->
+            <button class="btn btn-top" type="button"><span class="ir">탑버튼</span></button>
+            <!--//e: scrollTop-->
+        </div>
+        <!-- //e:contentWrap -->
+        <!-- s:footer -->
+        <div id="footerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#footerWrap").load("../INCLUDE/inc_footer.html");
+                });
+            </script>
+        </div>
+        <!-- //e:footer -->
+    </div>
+</body>
+
+</html>

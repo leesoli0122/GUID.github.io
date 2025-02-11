@@ -1,0 +1,118 @@
+<div id="gnb" class="header-wrap">
+    header
+</div>
+
+<script>
+    $(document).ready(function () {
+        // 전역 변수
+        var isNavMenuOpen = false;
+        var $header = $(".header-wrap");
+        var $lnb = $(".h-menu");
+
+        // 스크롤시 헤더 fix
+        $(window).scroll(function () {
+            $lnb.toggleClass('fix', $(this).scrollTop() > 0);
+        });
+
+        // 미디어쿼리
+        var checkmedia = window.matchMedia("screen and (max-width:1200px)");
+
+        checkScreen();
+        checkmedia.addEventListener("change", checkScreen);
+
+        function checkScreen() {
+            if (checkmedia.matches) {
+                menuTablet();
+            } else {
+                menuDesktop();
+            }
+        }
+
+        // 데스크탑 메뉴
+        function menuDesktop() {
+            let hideMenuTimer;
+
+            // 초기화
+            $(".menu > li").off('mouseenter mouseleave');
+            $("html").css({ 'overflow': 'auto' });
+            $lnb.css({ 'right': '0', 'display': 'flex', 'opacity': '1', 'overflow': 'visible' });
+            $header.removeClass('side');
+
+            // 메뉴에 마우스가 올라가면 서브메뉴 보이기
+            $(".menu > li").on('mouseenter', function () {
+                clearTimeout(hideMenuTimer);
+                $(this).addClass('on').siblings().removeClass('on').find(".menuitem-wrap").removeClass('on');
+                $(this).children(".menuitem-wrap").addClass('on');
+            });
+
+            // 메뉴 전체를 벗어났을 때 일정 시간 후 서브메뉴 닫기
+            $(".menu").on('mouseleave', function () {
+                hideMenuTimer = setTimeout(function () {
+                    $(".menu > li, .menuitem-wrap").removeClass('on');
+                }, 300);
+            });
+
+            // 서브메뉴에 마우스가 들어오면 닫힘 타이머 제거
+            $(".menuitem-wrap").on('mouseenter', function () {
+                clearTimeout(hideMenuTimer);
+            });
+
+            // 포커스 이벤트로 접근성 설정
+            $(".menu > li > a, .menuitem-wrap a").on('focus', function () {
+                clearTimeout(hideMenuTimer);
+                $(this).closest('li').addClass('on').siblings().removeClass('on').find(".menuitem-wrap").removeClass('on');
+                $(this).closest('li').find(".menuitem-wrap").addClass('on');
+                $(".menuitem-wrap a").closest('li').removeAttr('class');
+            }).on('blur', function () {
+                hideMenuTimer = setTimeout(function () {
+                    $(".menu > li, .menuitem-wrap").removeClass('on');
+                }, 300);
+            });
+
+            // Tab 키로 서브메뉴로 이동 가능하게 설정
+            $(".menu > li > a").on('keydown', function (e) {
+                if (e.key === 'Tab' && $(this).hasClass('on')) {
+                    const $firstSubMenuItem = $(this).next(".menuitem-wrap").find('a').first();
+                    if ($firstSubMenuItem.length) {
+                        e.preventDefault();
+                        $firstSubMenuItem.focus();
+                    }
+                }
+            });
+
+            // Shift+Tab으로 상위 메뉴로 포커스 이동
+            $(".menuitem-wrap a").on('keydown', function (e) {
+                if (e.key === 'Tab' && e.shiftKey) {
+                    e.preventDefault();
+                    $(this).closest('.menuitem-wrap').prev('a').focus();
+                }
+            });
+        }
+
+        // 테블릿 및 모바일 메뉴
+        function menuTablet() {
+            // 변수 초기화 및 기존 이벤트 리스너 제거
+            var $sideMenu = $(".header-wrap.side .menu > li");
+            $lnb.css({'right': '-100%'}).hide(); // 메뉴 초기 상태로 숨김 처리
+            $(".nav-btn > .ham, .nav-btn > .ham-close").off('click');
+            $header.removeClass('side');
+            $sideMenu.removeClass('on');
+
+            // 햄버거 메뉴 아이콘 클릭 시
+            $(".ham").click(function (e) {
+                e.preventDefault();
+                $header.addClass('side'); // .header-wrap에 side 클래스 추가
+                $("html").css({ 'overflow': 'hidden' }); // 스크롤 비활성화
+                $lnb.css({'right':'0','display':'block', 'opacity':'1'}).fadeIn(1000); // 메뉴 나타남
+            });
+
+            // 햄버거 메뉴 닫기 아이콘 클릭 시
+            $(".ham-close").click(function (e) {
+                e.preventDefault();
+                $("html").css({ 'overflow': 'auto' }); // 스크롤 활성화
+                $header.removeClass('side'); // .header-wrap에서 side 클래스 제거
+            });
+        }
+    });
+
+</script>

@@ -1,0 +1,146 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keyword" content="">
+    <meta name="description" content="button">
+    <meta name="author" content="joahreum">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title> CHECKBOX&RADIO </title>
+
+    <!-- 가이드CSS -->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+
+    <!-- content.css -->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/content.css">
+
+    <!-- 공통JS -->
+    <script type="text/javascript" src="../../assets/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/default.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/guide.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/ui_plugin.js"></script>
+
+    <style>
+        .wrap:has(.guide) {
+            padding: 20px;
+        }
+
+        .guide {
+            padding: 15px;
+        }
+
+        .guide h4 {
+            margin: 20px 0;
+        }
+
+        .guide .border {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #33333323;
+            border-radius: 15px;
+        }
+
+        .guide .border li {
+            padding: 10px;
+        }
+
+        /* 타이포 */
+        .text-wrap+.text-wrap {
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="guide">
+            <h4>CheckBox</h4>
+            <div class="form-wrap border">
+                <div class="form-group check">
+                    <ul class="check-box">
+                        <li>
+                            <input type="checkbox" id="check-1" name="checkbox">
+                            <label for="check-1" class="check-button">
+                                <span>Check Box OFF - 다건선택</span>
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="check-2" name="checkbox" checked="">
+                            <label for="check-2" class="check-button">
+                                <span>Check Box ON - 다건선택</span>
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="check-3" name="checkbox" disabled="">
+                            <label for="check-3" class="check-button">
+                                <span>Check Box Disabled - 다건선택</span>
+                            </label>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="form-group check round">
+                    <ul class="check-box">
+                        <li>
+                            <input type="checkbox" id="check-4" name="checkbox">
+                            <label for="check-4" class="check-button">
+                                <span>Check Box OFF - 단일 사용</span>
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="check-5" name="checkbox" checked="">
+                            <label for="check-5" class="check-button">
+                                <span>Check Box ON - 단일 사용</span>
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="check-6" name="checkbox" disabled="">
+                            <label for="check-6" class="check-button">
+                                <span>Check Box Disabled - 단일 사용</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>Radio</h4>
+            <div class="form-wrap border">
+                <div class="form-group radio">
+                    <ul class="radio-box">
+                        <li>
+                            <input type="radio" id="radio-1" name="radio">
+                            <label for="radio-1" class="radio-button"><span>Radio Button1</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" id="radio-2" name="radio" checked>
+                            <label for="radio-2" class="radio-button"><span>Radio Button2</span></label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="form-group radio">
+                    <ul class="radio-box">
+                        <li>
+                            <input type="radio" id="radio-3" name="radio2" disabled>
+                            <label for="radio-3" class="radio-button"><span>disabled</span></label>
+                        </li>
+                        <li>
+                            <input type="radio" id="radio-4" name="radio2" checked disabled>
+                            <label for="radio-4" class="radio-button"><span>disabled</span></label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

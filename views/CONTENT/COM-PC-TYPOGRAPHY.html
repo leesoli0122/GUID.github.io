@@ -1,0 +1,139 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keyword" content="">
+    <meta name="description" content="button">
+    <meta name="author" content="joahreum">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title> guide </title>
+
+    <!-- 가이드CSS -->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+
+    <!-- content.css -->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/content.css">
+
+    <!-- 공통JS -->
+    <script type="text/javascript" src="../../assets/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../assets/js/lib/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/default.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/guide.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/ui_common.js"></script>
+    <script type="text/javascript" src="../../assets/js/ui/ui_plugin.js"></script>
+
+    <style>
+        .wrap:has(.guide) { padding:20px; }
+        .guide { padding:15px; }
+        .guide h4 { margin-bottom:5px; }
+        .guide .border { margin-bottom:20px; padding:20px; border:1px solid #33333323; border-radius:15px; }
+        .guide .border li { padding:10px; }
+
+        /* 타이포 */
+        .text-wrap + .text-wrap { margin-top:10px; }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="guide">
+            <h4>font-size</h4>
+            <ul class="border">
+                <li>
+                    <ul class="flex">
+                        <li style="font-size:var(--font28);">H2 나눔고딕</li>
+                        <li>28px</li>
+                        <li>line-height: 2.375rem</li>
+                        <li>컨텐츠 타이틀</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="flex">
+                        <li style="font-size:var(--font22);">H3 나눔고딕</li>
+                        <li>22px</li>
+                        <li>line-height: 2.125rem</li>
+                        <li>팝업 타이틀</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="flex">
+                        <li style="font-size:var(--font20);">H4 나눔고딕</li>
+                        <li>20px</li>
+                        <li>line-height: 2rem</li>
+                        <li>본문 타이틀, 하단 CTA 버튼,</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="flex">
+                        <li style="font-size:var(--font18);">나눔고딕</li>
+                        <li>18px</li>
+                        <li>line-height: 1.625rem</li>
+                        <li>테이블 TH, 테이블 TD</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="flex">
+                        <li style="font-size:var(--font16);">P 나눔고딕</li>
+                        <li>16px</li>
+                        <li>line-height: 1.5rem</li>
+                        <li>기준폰트, 본문 서브타이틀, 본문 영역 강조, 본문 내용, 보조버튼</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="flex">
+                        <li style="font-size:var(--font14);">Caption 나눔고딕</li>
+                        <li>14px</li>
+                        <li>line-height: 1.31rem</li>
+                        <li>캡션</li>
+                    </ul>
+                </li>
+            </ul>
+            <h4>font-weight</h4>
+            <ul class="border">
+                <li style="font-weight:var(--w-light)">나눔고딕OTF - Light</li>
+                <li style="font-weight:var(--w-regular);">나눔고딕OTF - Regular</li>
+                <li style="font-weight:var(--w-bold);">나눔고딕OTF - Bold</li>
+            </ul>
+            <h4>text-wrap</h4>
+            <div class="border">
+                <div class="text-wrap" style="padding-bottom:10px; border-bottom:1px solid #ddd;">
+                    <h2>페이지 타이틀 </h2>
+                    <p class="sub-tit">페이지 보조 내용이 들어갑니다.</p>
+                </div>
+                <div class="text-wrap">
+                    <h3>팝업 타이틀 </h3>
+                </div>
+            </div>
+            <h4>sub-text-wrap</h4>
+            <div class="border">
+                <div class="sub-text-wrap" style="border-bottom:1px solid #ddd;">
+                    <h4>본문 타이틀</h4>
+                </div>
+                <div class="sub-text-wrap" style="border-bottom:1px solid #ddd;">
+                    <h4>아이콘 함께</h4>
+                    <p class="caption1">caption</p>
+                </div>
+                <div class="sub-text-wrap">
+                    <p class="caption2">caption 아이콘 없는</p>
+                </div>
+            </div>
+            <h4>info</h4>
+            <div class="border">
+                <div class="form-group">
+                    <p class="info1">info</p>
+                </div>
+                <div class="form-group error">
+                    <p class="info1">info</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
