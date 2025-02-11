@@ -269,7 +269,13 @@ input.form-control:read-only { border:1px solid var(--border2); }
 	Input Floating
 ---------------------------------------------*/
 .form-group.floating { position: relative; }
-.form-group.floating label { position: absolute; top: 0; left: 0; z-index: 2; padding: 12px 16px; height: 100%; border: 1px solid transparent; text-align: start; text-overflow: ellipsis; white-space: nowrap; pointer-events: none; overflow: hidden; transform-origin: 0 0; transition: opacity .1s ease-in-out, transform .1s ease-in-out;}
+.form-group.floating .form-control { padding: 12px 10px; width: 100%; border: 2px solid var(--border1); border-radius: 5px; outline: none; font-size: var(--font16); font-weight: var(--w-regular); background: transparent; color: var(--normal); transition: border-color 0.3s, box-shadow 0.3s; }
+.form-group.floating .form-control:focus { border-color: var(--primary); box-shadow: 0 0 5px rgba(15, 56, 98, 0.3); }
+.form-group.floating label { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); padding: 0 5px; font-size: var(--font16); color: var(--inactive);  transition: all 0.3s ease; pointer-events: none; }
+
+/* 포커스 또는 값 입력 시 라벨 이동 */
+.form-group.floating .form-control:focus + label,
+.form-group.floating .form-control:not(:placeholder-shown) + label { top: 0; font-size: var(--font12); color: var(--primary); background: var(--white); }
 
 /*********************************************************************
 INPUT_ ETC
