@@ -269,7 +269,7 @@ input.form-control:read-only { border:1px solid var(--border2); }
 	Input Floating
 ---------------------------------------------*/
 .form-group.floating { position: relative; }
-.form-group.floating .form-control { padding: 12px 10px; width: 100%; border: 2px solid var(--border1); border-radius: 5px; outline: none; font-size: var(--font16); font-weight: var(--w-regular); background: transparent; color: var(--normal); transition: border-color 0.3s, box-shadow 0.3s; }
+.form-group.floating .form-control { padding: 12px 10px; width: 100%; outline: none; font-size: var(--font16); font-weight: var(--w-regular); background: transparent; color: var(--normal); transition: border-color 0.3s, box-shadow 0.3s; }
 .form-group.floating .form-control:focus { border-color: var(--primary); box-shadow: 0 0 5px rgba(15, 56, 98, 0.3); }
 .form-group.floating label { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); padding: 0 5px; font-size: var(--font16); color: var(--inactive);  transition: all 0.3s ease; pointer-events: none; }
 
