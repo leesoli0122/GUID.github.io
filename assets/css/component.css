@@ -1,0 +1,57 @@
+/*********************************************************************
+TOGGLE_ACCORDION #토글_아코디언
+*********************************************************************/
+/*---------------------------------------------
+	Toggle_Accordion Default [QnA]
+---------------------------------------------*/
+.accordion-wrap + .accordion-wrap { margin-top:20px; }
+.accordion-wrap > .accordion-info:first-child { margin-top:0; }
+.accordion-wrap > .accordion-info { margin-top:20px; border:1px solid #DDDDDD; border-radius: 20px; overflow: hidden;}
+.accordion-wrap > .accordion-info > .ques { position:relative; display:flex; width:100%; justify-content:space-between; align-items:center; padding:30px 74px 30px 30px;  font-size: var(--font18); font-weight:var(--w-bold); color:var(--title);  }
+.accordion-wrap > .accordion-info > .ques::after { content:''; position:absolute; right:30px; top:50%; transform:translateY(-50%); background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h20v20H0z' data-name='사각형 22269'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path='url(%23a)' data-name='그룹 45678'%3E%3Cg data-name='그룹 45677'%3E%3Cpath fill='none' stroke='%23666666' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 3.99 3.99L13.98 8' data-name='패스 53126'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");; background-repeat: no-repeat; background-position: center; background-size:30px; width:24px; height:24px; }
+.accordion-wrap > .accordion-info > .ques.active::after { transform:translate(0, -50%) rotate(-180deg); transition: all ease .2s; }
+.accordion-wrap > .accordion-info > .ques .left:not(:has(.date)) { width:calc(100% - 300px);}
+.accordion-wrap > .accordion-info > .ques .left:not(:has(.date),:has(+.right .after-line)) { width:calc(100% - 150px);}
+.accordion-wrap > .accordion-info > .ques .left { width:calc(100% - 200px);}
+
+/* column default */
+.accordion-wrap > .accordion-info > .ques .left .tit:not(:has(.pre-ing)) { overflow:hidden; text-overflow: ellipsis;  white-space:nowrap;}
+.accordion-wrap > .accordion-info > .ques .left,
+.accordion-wrap > .accordion-info > .ques .right { display:flex; flex-direction:column; }
+
+/* inline */
+.accordion-wrap > .accordion-info > .ques .right.inline { display:flex; flex-direction: row; justify-content: center; align-items: center; }
+
+.accordion-wrap > .accordion-info > .ques-cont{ height:0; opacity: 0; overflow: hidden; padding-top:0; transition: height .2s ease, opacity .3s ease, padding-top .2s ease; }
+.accordion-wrap > .accordion-info > .ques-cont.active{ height:auto; opacity:1; background: var(--background4); padding:30px; font-size:var(--font16); font-weight:var(--w-bold); color:var(--inactive);}
+
+/* after line */
+.accordion-wrap > .accordion-info > .ques .after-line span::after { content:''; position: absolute; transform: translateY(-50%); top:50%; width:1px; height:14px; margin-left:16px; background: var(--border1); }
+.accordion-wrap > .accordion-info > .ques .btn.after-line span { padding-left:25px; }
+.accordion-wrap > .accordion-info > .ques .after-line span { padding-right:16px; margin-right:16px;}
+.accordion-wrap > .accordion-info > .ques .after-line button:last-child span,
+.accordion-wrap > .accordion-info > .ques .left .after-line span:last-child{ padding-right:0; margin-right:0;}
+.accordion-wrap > .accordion-info > .ques .left .after-line span:last-child::after,
+.accordion-wrap > .accordion-info > .ques .after-line button:last-child span::after { content: none; }
+.accordion-wrap > .accordion-info > .ques .left .tit .after-line span::after { background: var(--title); }
+
+/* 날짜 icon */
+.accordion-wrap > .accordion-info > .ques .date { padding-left:25px; font-size:var(--font16); font-weight:var(--w-regular); color:var(--inactive); }
+.accordion-wrap > .accordion-info > .ques .date { background: url(../images/common/ic_date.png) no-repeat left  50%/20px auto;}
+
+/* 버튼 icon */
+.accordion-wrap > .accordion-info > .ques .btn button { background: var(--white);  font-size:var(--font18); cursor: pointer; }
+.accordion-wrap > .accordion-info > .ques .btn button.modifi { background:url(../images/common/ic_list_modifi.png)no-repeat left 50%/20px auto;  }
+.accordion-wrap > .accordion-info > .ques .btn button.delete { background:url(../images/common/ic_list_delete.png)no-repeat left 50%/20px auto; }
+
+/*---------------------------------------------
+	Toggle_Accordion  [QnA] 아이콘있을 경우
+---------------------------------------------*/
+.accordion-wrap.ico > .accordion-info > .ques { padding:32px 74px 31px; }
+.accordion-wrap.ico > .accordion-info > .ques::before,
+.accordion-wrap.ico > .accordion-info > .ques-cont p::before { content:''; position:absolute; width:24px; height:24px; }
+.accordion-wrap.ico > .accordion-info > .ques::before { top:50%; transform: translateY(-50%); left:30px; background: url(../images/common/ic_question.png) no-repeat 100%/24px auto;  }
+
+.accordion-wrap.ico > .accordion-info > .ques-cont p::before { left:0; background: url(../images/common/ic_answer.png) no-repeat 100%/24px auto; }
+.accordion-wrap.ico > .accordion-info > .ques-cont p { padding-left:44px; line-height:24px; /*white-space:pre-wrap;*/ }
+.accordion-wrap.ico > .accordion-info > .ques .date { margin-left:30px; }
